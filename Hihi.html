@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>System Failure</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #0000aa;
+      color: white;
+      font-family: monospace;
+      font-size: 20px;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: left;
+      flex-direction: column;
+    }
+    .error-box {
+      max-width: 800px;
+    }
+    .blink {
+      animation: blink 1s infinite;
+    }
+    @keyframes blink {
+      50% { opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="error-box">
+    <h2>💀 Fatal System Error 💀</h2>
+    <p>
+      A fatal exception 0E has occurred at 0028:C0011E36 in VXD VMM(01) +<br>
+      00010E36. The current application will be terminated.
+    </p>
+    <p>
+      * Press any key to terminate the current application.<br>
+      * Press CTRL+ALT+DEL again to restart your computer.<br>
+      * You will lose any unsaved information in all applications.
+    </p>
+    <p class="blink">Press any key to continue _</p>
+  </div>
+
+  <script>
+    // Setelah beberapa detik bikin makin serem
+    setTimeout(() => {
+      document.body.style.background = "black";
+      document.body.style.color = "red";
+      document.body.innerHTML = "<h1 style='font-size:60px;text-align:center;'>⚠️ SYSTEM HACKED ⚠️</h1><p style='text-align:center;'>Menghapus semua data dalam 5...4...3...2...1...</p>";
+      
+      setTimeout(() => {
+        document.body.innerHTML = "<h1 style='color:lime; text-align:center;'>😂 PRANK DOANG BRO 😂</h1>";
+      }, 6000);
+    }, 10000); // 10 detik pertama tampilan BSOD
+  </script>
+</body>
+</html>
